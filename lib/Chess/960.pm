@@ -18,9 +18,9 @@ Chess::960 generates random starting positions for a Chess960 game.
 
   my $fen = Chess::960->new->fen; # Forsyth-Edwards notation of position
 
-  my $pos = Chess::960->new->pos; # simple data structure
+  my $pos = Chess::960->new->generate_position; # simple data structure
 
-  my $pos = Chess::960->new->pos(123); # get position by number
+  my $pos = Chess::960->new->generate_position(123); # get position by number
 
 =cut
 
@@ -104,8 +104,9 @@ sub generate_position {
 
 =method fen
 
-This method returns a FEN-format string describing the complete starting
-position of the board.  For example:
+This method returns a
+L<FEN|https://en.wikipedia.org/wiki/Forsyth%E2%80%93Edwards_Notation>-format
+string describing the complete starting position of the board.  For example:
 
   rnbbqkrn/pppppppp/8/8/8/8/PPPPPPPP/RNBBQKRN w KQkq - 0 1
 
